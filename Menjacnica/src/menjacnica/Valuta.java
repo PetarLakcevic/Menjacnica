@@ -1,11 +1,24 @@
 package menjacnica;
 
+import java.util.GregorianCalendar;
+
 public class Valuta {
 
+	private GregorianCalendar dan;
 	private int sifra;
 	private String naziv;
 	private String skracenica;
 	private double kupovni, srednji, prodajni;
+
+	public GregorianCalendar getDan() {
+		return dan;
+	}
+
+	public void setDan(GregorianCalendar dan) {
+		if (dan == null)
+			throw new RuntimeException("Null dan.");
+		this.dan = dan;
+	}
 
 	public int getSifra() {
 		return sifra;
@@ -69,6 +82,7 @@ public class Valuta {
 		}
 		this.prodajni = prodajni;
 	}
+
 	@Override
 	public String toString() {
 		return "Sifra: " + getSifra() + "\n + Skraceno: " + getSkracenica() + "\n Kupovni kurs: " + getKupovni()
@@ -104,7 +118,7 @@ public class Valuta {
 			return false;
 		}
 		Valuta nov = (Valuta) obj;
-		if (getSifra() == nov.getSifra() && getSkracenica() == nov.getSkracenica()) {
+		if (getSifra() == nov.getSifra() && getSkracenica() == nov.getSkracenica() && getDan() == nov.getDan()) {
 			return true;
 		}
 		return false;
