@@ -12,6 +12,8 @@ public class Valuta {
 	}
 
 	public void setSifra(int sifra) {
+		if (sifra == 0)
+			throw new RuntimeException("Sifra ne moze biti 0");
 		this.sifra = sifra;
 	}
 
@@ -20,6 +22,8 @@ public class Valuta {
 	}
 
 	public void setNaziv(String naziv) {
+		if (naziv.equals(null))
+			throw new RuntimeException("Naziv ne sme biti null");
 		this.naziv = naziv;
 	}
 
@@ -28,6 +32,8 @@ public class Valuta {
 	}
 
 	public void setSkracenica(String skracenica) {
+		if (skracenica.equals(null))
+			throw new RuntimeException("Skracenica ne sme biti null");
 		this.skracenica = skracenica;
 	}
 
@@ -36,6 +42,9 @@ public class Valuta {
 	}
 
 	public void setKupovni(double kupovni) {
+		if (kupovni <= 0) {
+			throw new RuntimeException("Kurs mora biti pozitivan!");
+		}
 		this.kupovni = kupovni;
 	}
 
@@ -44,6 +53,9 @@ public class Valuta {
 	}
 
 	public void setSrednji(double srednji) {
+		if (srednji <= 0) {
+			throw new RuntimeException("Kurs mora biti pozitivan!");
+		}
 		this.srednji = srednji;
 	}
 
@@ -52,6 +64,9 @@ public class Valuta {
 	}
 
 	public void setProdajni(double prodajni) {
+		if (prodajni <= 0) {
+			throw new RuntimeException("Kurs mora biti pozitivan!");
+		}
 		this.prodajni = prodajni;
 	}
 	@Override
