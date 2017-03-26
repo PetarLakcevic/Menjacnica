@@ -13,7 +13,6 @@ public class Menjacinca implements MenjacnicaInterface {
 		if (sifra==0||ime==null||skracenica==null||kursevi.length!=2||dan==null) {
 			throw new RuntimeException("Greska!");
 		}
-		
 		Valuta v = new Valuta();
 		v.setDan(dan);
 		v.setKupovni(kursevi[0]);
@@ -22,22 +21,23 @@ public class Menjacinca implements MenjacnicaInterface {
 		v.setNaziv(ime);
 		v.setSkracenica(skracenica);
 		v.setSifra(sifra);
+
 		kurseviLista.add(v);
 	}
 
 	@Override
 	public void obrisiKurs(int sifra, GregorianCalendar dan) {
+
 		if (kurseviLista.isEmpty()) {
 			System.out.println("LISTA JE PRAZNA!");
 			return;
 		}
 		for (int i = 0; i < kurseviLista.size(); i++) {
-			if (kurseviLista.get(i).getSifra() == sifra && kurseviLista.get(i).getDan().equals(dan)) {
+			if (kurseviLista.get(i).getDan() == dan && kurseviLista.get(i).getSifra() == sifra) {
 				kurseviLista.remove(i);
 			}
 		}
 	}
-
 	@Override
 	public double[] vratiKurs(String skracenica, GregorianCalendar dan) {
 		double niz[] = new double[2];
@@ -53,6 +53,6 @@ public class Menjacinca implements MenjacnicaInterface {
 			}
 		}
 		return niz;
-
+	
 	}
 }
