@@ -1,12 +1,22 @@
 package menjacnica;
 
-public class Valuta {
+import java.util.GregorianCalendar;
 
+public class Valuta {
+	private GregorianCalendar dan;
 	private int sifra;
 	private String naziv;
 	private String skracenica;
 	private double kupovni, srednji, prodajni;
+	public GregorianCalendar getDan() {
+		return dan;
+	}
 
+	public void setDan(GregorianCalendar dan) {
+		if (dan == null)
+			throw new RuntimeException("Null dan.");
+		this.dan = dan;
+	}
 	public int getSifra() {
 		return sifra;
 	}
