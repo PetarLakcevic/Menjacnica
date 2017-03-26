@@ -21,10 +21,8 @@ public class Menjacinca implements MenjacnicaInterface {
 		v.setNaziv(ime);
 		v.setSkracenica(skracenica);
 		v.setSifra(sifra);
-
 		kurseviLista.add(v);
 	}
-
 	@Override
 	public void obrisiKurs(int sifra, GregorianCalendar dan) {
 
@@ -53,6 +51,5 @@ public class Menjacinca implements MenjacnicaInterface {
 			}
 		}
 		return niz;
-	
 	}
 }
